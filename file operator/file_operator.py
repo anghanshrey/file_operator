@@ -61,18 +61,37 @@ class JournalManager:
             print("Error",e)
     
     def Delete_journal(self):
-        Delete_option = input("Are you sure you want to delete all entries? (yes/no): ")
+        Delete_option = input(
+            "Are you sure you want to delete all entries? (yes/no): "
+        )
+
         if Delete_option == "yes":
             try:
                 if os.path.exists("journal.txt"):
-                    os.remove("journal.txt")
-                    print("Output (If the file is deleted successfully):")
-                    print("All journal entries have been deleted.")
+
+                    with open("journal.txt", "r") as file:
+                        data = file.read()
+
+                    if data.strip():
+                        with open("journal.txt", "w") as file:
+                            file.write("")
+
+                        print("All journal entries have been deleted.")
+                    else:
+                        print("No journal entries to delete.")
+
                 else:
-                    print("Output (If the file does not exist):")
                     print("No journal entries to delete.")
+
+            except PermissionError as e:
+                print("Error:", e)
+
+            except FileNotFoundError as e:
+                print("Error:", e)
+
             except Exception as e:
-                print("Error",e)
+                print("Error:", e)
+
         else:
             print("Deletion canceled.")
 
