@@ -228,7 +228,7 @@ Thank you for using Personal Journal Manager. Goodbye!
 
 ## 🎬 Video
 
-Video Link :- https://drive.google.com/drive/folders/your-video-link-here
+Video Link :- https://drive.google.com/drive/folders/1jxsqBfpJONEM-TMyHnIIV_RSykLktgr5?usp=sharing
 
 </div>
 
